@@ -36,6 +36,9 @@
     overflow-x:hidden;
     padding:44px 32px;
   }
+  @media (max-width:900px){body{padding:24px 16px;}}
+  @media (max-width:640px){body{padding:14px 10px;}}
+  @media (max-width:400px){body{padding:10px 7px;}}
   h1,h2,h3,h4{font-family:'Space Grotesk',sans-serif;margin:0;color:var(--ink);}
   p{margin:0;}
   a{color:inherit;}
@@ -44,6 +47,7 @@
 
   .mono{font-family:'JetBrains Mono',monospace;}
 
+  /* ---------- page frame ---------- */
   .site{position:relative;max-width:1360px;margin:0 auto;}
   .shape{position:absolute;border:3px solid var(--ink);z-index:1;}
   .shape--a{width:78px;height:78px;border-radius:50%;background:var(--violet);top:-26px;left:64px;}
@@ -59,10 +63,14 @@
     border-radius:var(--r-lg);
     overflow:hidden;
   }
+  @media (max-width:640px){.frame{border-radius:16px;border-width:2.5px;}}
 
   .wrap{max-width:1160px;margin:0 auto;padding-left:2.5rem;padding-right:2.5rem;}
-  @media (max-width:640px){.wrap{padding-left:1.25rem;padding-right:1.25rem;}}
+  @media (max-width:860px){.wrap{padding-left:1.75rem;padding-right:1.75rem;}}
+  @media (max-width:640px){.wrap{padding-left:1.1rem;padding-right:1.1rem;}}
+  @media (max-width:400px){.wrap{padding-left:.85rem;padding-right:.85rem;}}
 
+  /* ---------- nav ---------- */
   nav.topnav{border-bottom:3px solid var(--ink);background:var(--cream);}
   .topnav-inner{display:flex;align-items:center;justify-content:space-between;padding:1.1rem 0;}
   .brand{display:flex;align-items:center;gap:.65rem;text-decoration:none;}
@@ -90,6 +98,7 @@
     .mobile-menu.open{display:flex;}
   }
 
+  /* ---------- buttons / pills / chips ---------- */
   .btn{
     display:inline-flex;align-items:center;gap:.5rem;
     font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:.95rem;
@@ -117,6 +126,7 @@
 
   .mark{background:var(--yellow);padding:.05em .35em;border:2.5px solid var(--ink);border-radius:7px;display:inline-block;transform:rotate(-1.4deg);box-shadow:3px 3px 0 var(--ink);}
 
+  /* ---------- sections / cards ---------- */
   .section{padding:5.5rem 0;border-top:3px solid var(--ink);}
   .hero-section{padding:5rem 0 4.5rem;}
   @media (max-width:640px){.section{padding:3.5rem 0;} .hero-section{padding:3rem 0;}}
@@ -130,21 +140,38 @@
   .card-icon{width:44px;height:44px;border:2.5px solid var(--ink);border-radius:10px;display:flex;align-items:center;justify-content:center;margin-bottom:1rem;}
   .card-icon svg{width:22px;height:22px;stroke:var(--ink);}
   .card-title{font-size:1.35rem;font-weight:700;margin-bottom:1rem;}
+  @media (max-width:640px){
+    .card{padding:1.35rem;border-radius:14px;box-shadow:4px 4px 0 var(--ink);}
+    .card:hover{transform:translate(-2px,-2px);box-shadow:6px 6px 0 var(--ink);}
+    .card-title{font-size:1.15rem;margin-bottom:.8rem;}
+    .card-icon{width:38px;height:38px;margin-bottom:.8rem;}
+  }
+  @media (max-width:400px){.card{padding:1.05rem;}}
+
+  .stack-gap{margin-top:1.75rem;}
+  @media (max-width:640px){.stack-gap{margin-top:1.25rem;}}
 
   .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:1.75rem;}
-  @media (max-width:860px){.grid-2{grid-template-columns:1fr;}}
+  @media (max-width:860px){.grid-2{grid-template-columns:1fr;gap:1.25rem;}}
 
   .dot-row{display:flex;align-items:center;gap:.65rem;margin:.5rem 0;}
   .dot-row .dot{width:8px;height:8px;border-radius:2px;background:var(--green);flex:none;}
 
+  /* ---------- hero ---------- */
   .hero-grid{display:grid;grid-template-columns:1.15fr .95fr;gap:3.25rem;align-items:center;}
   @media (max-width:960px){.hero-grid{grid-template-columns:1fr;}}
   .hero-title{font-size:clamp(2.3rem,5.2vw,3.6rem);line-height:1.06;font-weight:800;text-transform:uppercase;margin:1.1rem 0 1.1rem;}
+  @media (max-width:420px){.hero-title{font-size:1.95rem;}}
   .hero-role{font-family:'JetBrains Mono',monospace;font-weight:600;font-size:1.05rem;color:var(--green-deep);margin-bottom:1rem;}
   .hero-body{font-size:1.06rem;color:var(--muted);max-width:34rem;line-height:1.65;margin-bottom:2.1rem;}
   .hero-ctas{display:flex;flex-wrap:wrap;gap:.9rem;}
+  @media (max-width:640px){
+    .hero-ctas{flex-direction:column;align-items:stretch;gap:.75rem;}
+    .hero-ctas .btn{justify-content:center;}
+  }
 
   .terminal{background:#171712;border:3px solid var(--ink);border-radius:18px;box-shadow:9px 9px 0 var(--ink);padding:1.5rem 1.5rem 1.75rem;}
+  @media (max-width:640px){.terminal{padding:1.15rem 1.1rem 1.35rem;border-radius:14px;box-shadow:5px 5px 0 var(--ink);}}
   .terminal-header{display:flex;align-items:center;gap:7px;margin-bottom:1.1rem;}
   .terminal-dot{width:11px;height:11px;border-radius:50%;border:1.5px solid rgba(0,0,0,.4);}
   .terminal-title{margin-left:.6rem;font-family:'JetBrains Mono',monospace;font-size:.75rem;color:#9c9788;}
@@ -155,6 +182,7 @@
   .cursor{display:inline-block;width:7px;height:1em;background:var(--green);margin-left:3px;vertical-align:text-bottom;animation:blink 1s steps(1) infinite;}
   @keyframes blink{0%,49%{opacity:1;}50%,100%{opacity:0;}}
 
+  /* ---------- projects ---------- */
   .project-card{margin-bottom:1.5rem;}
   .project-card:last-child{margin-bottom:0;}
   .project-head{display:flex;justify-content:space-between;align-items:flex-start;gap:1rem;margin-bottom:.9rem;}
@@ -165,10 +193,12 @@
   .project-tags{display:flex;flex-wrap:wrap;gap:.5rem;}
   .ext-icon{width:20px;height:20px;flex:none;stroke:var(--ink);}
 
+  /* ---------- footer ---------- */
   footer{border-top:3px solid var(--ink);padding:2.25rem 0;text-align:center;}
   footer p{font-size:.85rem;color:var(--muted);}
   footer .mono{font-size:.78rem;color:var(--muted);margin-top:.35rem;}
 
+  /* ---------- contact ---------- */
   .contact-card{padding:2.5rem;text-align:center;margin-bottom:2rem;}
   .social-row{display:flex;flex-wrap:wrap;justify-content:center;gap:1rem;}
   .social-btn{display:flex;align-items:center;gap:.6rem;padding:.85rem 1.4rem;border:2.5px solid var(--ink);border-radius:999px;background:var(--paper);text-decoration:none;color:var(--ink);font-weight:600;box-shadow:4px 4px 0 var(--ink);transition:transform .15s, box-shadow .15s;}
@@ -189,6 +219,8 @@
   <div class="shape shape--d"></div>
 
   <div class="frame">
+
+    <!-- ============ NAV ============ -->
     <nav class="topnav">
       <div class="wrap topnav-inner">
         <a href="#home" class="brand">
@@ -228,6 +260,7 @@
       </div>
     </nav>
 
+    <!-- ============ HERO ============ -->
     <header id="home" class="hero-section">
       <div class="wrap">
         <div class="hero-grid">
@@ -272,6 +305,7 @@
     </header>
 
     <main>
+    <!-- ============ ABOUT ============ -->
     <section id="about" class="section">
       <div class="wrap">
         <span class="eyebrow">// about-me</span>
@@ -335,7 +369,7 @@
           </div>
         </div>
 
-        <div class="card" style="margin-top:1.75rem;">
+        <div class="card stack-gap">
           <div class="card-icon" style="background:var(--yellow);">
             <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9.81 15.9 9 18.75l-.81-2.85a4.5 4.5 0 0 0-3.09-3.09L2.25 12l2.85-.81a4.5 4.5 0 0 0 3.09-3.09L9 5.25l.81 2.85a4.5 4.5 0 0 0 3.09 3.09l2.85.81-2.85.81a4.5 4.5 0 0 0-3.09 3.09Z"/></svg>
           </div>
@@ -349,6 +383,7 @@
       </div>
     </section>
 
+    <!-- ============ PROJECTS ============ -->
     <section id="projects" class="section">
       <div class="wrap">
         <span class="eyebrow">// projects</span>
@@ -357,32 +392,32 @@
         <div class="project-card card">
           <div class="project-head">
             <div>
-              <a href="https://github.com/Coding-with-Mayank/RECONLENS-BURP-EXTENSION" target="_blank" rel="noopener noreferrer" class="project-name">Reconlens Burp Extension</a>
-              <p class="project-date">August 2026</p>
+              <a href="https://github.com/Coding-with-Mayank/wifi-security-analyzer" target="_blank" rel="noopener noreferrer" class="project-name">Wi-Fi Security Analyzer</a>
+              <p class="project-date">September 2025</p>
             </div>
             <svg class="ext-icon" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 19.5l15-15M9.75 4.5h9.75v9.75"/></svg>
           </div>
-          <p class="project-desc">Java-based Burp Suite extension that automates request analysis and reconnaissance tasks to improve penetration testing workflows and identify potential attack surfaces.</p>
+          <p class="project-desc">Python tool that analyzes Wi-Fi networks for weak encryption and security misconfigurations, reaching ~90% detection accuracy in testing.</p>
           <div class="project-tags">
-            <span class="chip chip--green">Java</span>
-            <span class="chip chip--green">Burp Suite</span>
-            <span class="chip chip--green">Web Security</span>
+            <span class="chip chip--green">Python</span>
+            <span class="chip chip--green">Network Security</span>
+            <span class="chip chip--green">Encryption Analysis</span>
           </div>
         </div>
 
         <div class="project-card card">
           <div class="project-head">
             <div>
-              <a href="https://github.com/Coding-with-Mayank/CredAudit" target="_blank" rel="noopener noreferrer" class="project-name">CredAudit</a>
+              <a href="https://github.com/Coding-with-Mayank/fake-news-detection-system" target="_blank" rel="noopener noreferrer" class="project-name">Fake News Detection System</a>
               <p class="project-date">October 2025</p>
             </div>
             <svg class="ext-icon" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 19.5l15-15M9.75 4.5h9.75v9.75"/></svg>
           </div>
-          <p class="project-desc">Python tool that audits user credentials against configurable security policies, identifying weak authentication practices and supporting secure password management.</p>
+          <p class="project-desc">ML-based system using NLP (TF-IDF, NLTK) and a Random Forest classifier for fake news detection, with real-time prediction support.</p>
           <div class="project-tags">
-            <span class="chip chip--blue">Python</span>
-            <span class="chip chip--blue">Authentication Security</span>
-            <span class="chip chip--blue">Password Auditing</span>
+            <span class="chip chip--blue">Machine Learning</span>
+            <span class="chip chip--blue">NLP</span>
+            <span class="chip chip--blue">Random Forest</span>
           </div>
         </div>
 
@@ -404,6 +439,7 @@
       </div>
     </section>
 
+    <!-- ============ SKILLS ============ -->
     <section id="skills" class="section">
       <div class="wrap">
         <span class="eyebrow">// skills</span>
@@ -446,7 +482,7 @@
           </div>
         </div>
 
-        <div class="card" style="margin-top:1.75rem;">
+        <div class="card stack-gap">
           <h3 class="card-title" style="font-size:1.1rem;">Tools &amp; Interpersonal Skills</h3>
           <div style="display:flex;flex-wrap:wrap;gap:.6rem;">
             <span class="chip">VS Code</span>
@@ -464,6 +500,7 @@
       </div>
     </section>
 
+    <!-- ============ CONTACT ============ -->
     <section id="contact" class="section">
       <div class="wrap" style="max-width:760px;text-align:center;">
         <span class="eyebrow">// get-in-touch</span>
@@ -509,6 +546,7 @@
 </div>
 
 <script>
+  // mobile menu toggle
   const menuBtn = document.getElementById('menu-btn');
   const mobileMenu = document.getElementById('mobile-menu');
   const iconOpen = document.getElementById('menu-icon-open');
@@ -528,6 +566,7 @@
     });
   });
 
+  // scroll-spy for active nav link
   const sections = document.querySelectorAll('main section, header#home');
   const navLinks = document.querySelectorAll('[data-nav]');
   window.addEventListener('scroll', () => {
@@ -543,5 +582,3 @@
 </script>
 </body>
 </html>
-
-
